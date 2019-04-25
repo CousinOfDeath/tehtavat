@@ -52,7 +52,7 @@ describe("htmlUtils tests", () => {
     });
 
 
-    it("buildPagination with 10 items and 3 per page returns markup for 4 pages", () => {
+    it("buildPagination with 10 items and 3 per page returns markup for 4 page selectors", () => {
 
         let expected = "<div class=\"pagination center\">" +
             "<a id=\"pageSelector1\" href=\"1\" class=\"page-link\">1</a>" +
@@ -66,7 +66,7 @@ describe("htmlUtils tests", () => {
         expect(result.outerHTML).toBe(expected);
     });
 
-    it("buildPagination with 10 items and 5 per page returns markup for 2 pages", () => {
+    it("buildPagination with 10 items and 5 per page returns markup for 2 page selectors", () => {
 
         let expected = "<div class=\"pagination center\">" +
             "<a id=\"pageSelector1\" href=\"1\" class=\"page-link\">1</a>" +
@@ -78,7 +78,7 @@ describe("htmlUtils tests", () => {
         expect(result.outerHTML).toBe(expected);
     });
 
-    it("buildDocumentGridCell with example doc returns markup for a grid cell", () => {
+    it("buildDocumentGridCell with doc returns markup for a grid cell", () => {
 
         let expected = "<div class=\"pure-u-1 pure-u-lg-1-4\">" +
             "<div class=\"l-box\">" +
@@ -99,7 +99,7 @@ describe("htmlUtils tests", () => {
         expect(result.outerHTML).toBe(expected);
     });
 
-    it("buildDocumentListRow with example doc returns markup for a list row", () => {
+    it("buildDocumentListRow with doc returns markup for a list row", () => {
 
         let expected = "<div class=\"pure-u-1 list-row\">" +
             "<div class=\"document-original-title\">" +
@@ -131,7 +131,7 @@ describe("htmlUtils tests", () => {
             body.appendChild(listModeSelectorDiv);
         });
 
-        it("With view mode as grid, only the container div has class 'selected'", () => {
+        it("With view mode as grid, only the grid mode container div has class 'selected'", () => {
 
             htmlUtils.highlightSelectedMode("grid");
 
@@ -139,7 +139,7 @@ describe("htmlUtils tests", () => {
             expect(document.getElementById("listModeSelectorDiv").classList.contains("selected")).toBeFalsy();
         });
 
-        it("With view mode as list, only the container div has class 'selected'", () => {
+        it("With view mode as list, only the list mode container div has class 'selected'", () => {
 
             htmlUtils.highlightSelectedMode("list");
 
